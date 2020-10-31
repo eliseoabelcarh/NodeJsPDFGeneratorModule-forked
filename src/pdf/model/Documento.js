@@ -1,0 +1,3 @@
+class Documento {
+    nombre: string;
+}

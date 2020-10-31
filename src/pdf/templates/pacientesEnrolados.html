@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Lista de Pacientes Enrolados</h1>
+<ul>
+    {{#each pacientes}}
+    <li>Nombre: {{this.nombre}}</li>
+    <li>Edad: {{this.edad}}</li>
+    <br>
+    {{/each}}
+</ul>
+</body>
+</html>
