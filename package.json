@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node ./src/main.js",
     "test": "mocha --recursive --timeout 50000",
-    "tdd": "nodemon --exec mocha --recursive --reporter min",
+    "tdd": "nodemon --exec mocha --recursive --timeout 0 --reporter min",
     "tdd-cov": "nodemon --exec nyc mocha --recursive",
     "coverage": " nyc mocha --recursive && nyc report --reporter=lcov"
   },
@@ -24,7 +24,9 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
+    "mocha": "^8.2.0",
     "mongodb": "^3.6.2",
+    "nodemon": "^2.0.6",
     "pdf-creator-node": "^1.4.1"
   }
 }

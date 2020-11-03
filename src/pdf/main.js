@@ -20,7 +20,10 @@ function pdfModule(config) {
     }
 }
 
-function crearArchivoPdf (template, data) {
+
+
+
+function crearArchivoPdf(template, data) {
     let response;
 
     try {
@@ -35,22 +38,22 @@ function crearArchivoPdf (template, data) {
     return response;
 }
 
-function eliminarArchivoPdf (filename) {
+function eliminarArchivoPdf(filename) {
     const path = `${pdfConfig.documentsPath}/${filename}`;
 
-    let fileDeleted  = false;
+    let fileDeleted = false;
 
     if (!fs.existsSync(path)) {
         throw Error('El archivo solicitado no existe: ' + filename);
     }
 
     console.log('Eliminando archivo... ', filename);
-    fs.unlink(path, err => fileDeleted = !err );
+    fs.unlink(path, err => fileDeleted = !err);
 
     return fileDeleted;
 }
 
-function limpiarCarpeta () {
+function limpiarCarpeta() {
 
     let response = true;
 
@@ -95,7 +98,7 @@ function crearOpciones() {
     }
 }
 
-function crearDocumento (html, { documento, contenido }) {
+function crearDocumento(html, { documento, contenido }) {
     const path = `${pdfConfig.documentsPath}/${documento.nombre}.pdf`;
 
     if (fs.existsSync(path)) {
