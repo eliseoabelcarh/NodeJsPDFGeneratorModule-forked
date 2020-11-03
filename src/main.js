@@ -8,8 +8,8 @@ async function main() {
     const resp = await pdf.resumenEnsayoClinico(RESUMEN_ENSAYO);
     const [filename] = resp.filename.split('/').reverse();
 
-    // setTimeout(pdf.eliminarArchivo, 10000, filename)
-    // setTimeout(pdf.limpiarCarpeta, 10000)
+    setTimeout(pdf.eliminarArchivo, 10000, filename)
+    setTimeout(pdf.limpiarCarpeta, 10000)
 
 }
 

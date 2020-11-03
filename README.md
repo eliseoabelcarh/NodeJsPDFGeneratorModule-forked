@@ -27,3 +27,22 @@
         console.log(rutaDeArchivoNuevo)
        
   ```       
+
+#### fixes 3/11/2020:
+ Cambios / Fork a Repositorio origin https://github.com/lpurcaro/pdf-module
+
+###### se agregó a directorio root la carpeta moduloAbel y su contenido(modulo node js)
+###### se agregó carpeta test a directorio root con los tests respectivos
+###### cambios en archivo ./src/pdf/main.js :
+**** linea 3:
+```   
+ const { crearPdfGenerator } = require('../../moduloAbel/src/abel')
+ ```   
+###### linea 12,13,14,15,16 : 
+```   
+ generarPdf: async (datos) => {
+            const pdfGen = await crearPdfGenerator(pdfConfig)
+            const rutaDeArchivoNuevo = await pdfGen.crear(datos)
+            return rutaDeArchivoNuevo
+        },
+```   

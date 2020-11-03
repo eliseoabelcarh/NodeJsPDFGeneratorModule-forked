@@ -1,5 +1,6 @@
 const pdf = require("pdf-creator-node");
 const fs = require('fs');
+const { crearPdfGenerator } = require('../../moduloAbel/src/abel')
 
 let pdfConfig = {};
 
@@ -8,6 +9,11 @@ function pdfModule(config) {
     pdfConfig = config;
 
     return {
+        generarPdf: async (datos) => {
+            const pdfGen = await crearPdfGenerator(pdfConfig)
+            const rutaDeArchivoNuevo = await pdfGen.crear(datos)
+            return rutaDeArchivoNuevo
+        },
         resumenEnsayoClinico: async (data) => {
             return crearArchivoPdf('ensayoClinico', data);
         },
