@@ -50,6 +50,11 @@ describe('-- CON CONFIG CUSTOMIZADO', async () => {
     const config = {
         pathForSavings: './test/uploads'
     }
+
+    before(async () => {
+        pdfGen = await crearPdfGenerator(config)
+    })
+
     after(async () => {
         borrarDirectorioRecursive(config.pathForSavings)
 
