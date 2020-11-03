@@ -1,7 +1,7 @@
 # PDF Generator
 
-### forked from lpurcaro/pdf-module
-
+### forked from lpurcaro/pdf-module 
+https://github.com/lpurcaro/pdf-module
 
 ### MODELO PARA CREAR PDF DEMO
   ```
@@ -27,9 +27,31 @@
         console.log(rutaDeArchivoNuevo)
        
   ```       
+### MODELO PARA CREAR PDF CUSTOMIZANDO ruta de guardado Y datos de contenido
+
+```
+      const datos = {
+                templateHtmlPath: './src/pdf/templates/ensayoClinico.html',
+                //formatOptions: vacio para usar el default
+                data: RESUMEN_ENSAYO
+            }
+      const rutaDeArchivoNuevo = await pdfHandler.generarPdf(datos)
+      console.log(rutaDeArchivoNuevo)
+
+        })
+    })
+
+```
+
+
+
+
+
+
+
 
 #### fixes 3/11/2020:
- Cambios / Fork a Repositorio origin https://github.com/lpurcaro/pdf-module
+ Cambios / Fork a Repositorio origin 
 
 ###### se agregó a directorio root la carpeta moduloAbel y su contenido(modulo node js)
 ###### se agregó carpeta test a directorio root con los tests respectivos
