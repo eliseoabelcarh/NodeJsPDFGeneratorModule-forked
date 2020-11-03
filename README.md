@@ -38,8 +38,6 @@ https://github.com/lpurcaro/pdf-module
       const rutaDeArchivoNuevo = await pdfHandler.generarPdf(datos)
       console.log(rutaDeArchivoNuevo)
 
-        })
-    })
 
 ```
 
