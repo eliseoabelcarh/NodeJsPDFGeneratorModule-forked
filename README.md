@@ -10,7 +10,7 @@ https://github.com/lpurcaro/pdf-module
         //ruta default para guardar archivos = './pathForSavings'
         //para modificar ruta default ir a archivo default.js
         //se envía objeto de datos vacío
-        const rutaDeArchivoNuevo = await pdfGen.crear({})
+        const rutaDeArchivoNuevo = await pdfGen.generarPdf({})
         console.log(rutaDeArchivoNuevo)
        
   ```         
@@ -23,16 +23,20 @@ https://github.com/lpurcaro/pdf-module
         const pdfGen = await crearPdfGenerator(config)
         //ruta default para guardar archivos = './pathForSavings'
         //para modificar ruta default ir a archivo default.js
-        const rutaDeArchivoNuevo = await pdfGen.crear({})
+        const rutaDeArchivoNuevo = await pdfGen.generarPdf({})
         console.log(rutaDeArchivoNuevo)
        
   ```       
 ### MODELO PARA CREAR PDF CUSTOMIZANDO ruta de guardado Y datos de contenido
 
 ```
+      const config = {
+              pathForSavings: './test/uploads'
+         }
+      const pdfHandler = await crearPdfGenerator(config)
       const datos = {
                 templateHtmlPath: './src/pdf/templates/ensayoClinico.html',
-                //formatOptions: vacio para usar el default
+                //formatOptions:{//ver default para ejemplo} //comentar para usar el default
                 data: RESUMEN_ENSAYO
             }
       const rutaDeArchivoNuevo = await pdfHandler.generarPdf(datos)
@@ -41,18 +45,11 @@ https://github.com/lpurcaro/pdf-module
 
 ```
 
-
-
-
-
-
-
-
 #### fixes 3/11/2020:
  Cambios / Fork a Repositorio origin 
 
-###### se agregó a directorio root la carpeta moduloAbel y su contenido(modulo node js)
-###### se agregó carpeta test a directorio root con los tests respectivos
+###### se agregó Módulo: 'moduloAbel' (modulo node js - with library dependencies)
+###### se agregó tests para 'moduloAbel' y para main.js (mocha)
 ###### cambios en archivo ./src/pdf/main.js :
 **** linea 3:
 ```   
